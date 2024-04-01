@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: juha
+
+logging:
+  level:
+    root: DEBUG
+
+server:
+  port: 8081
