@@ -2,6 +2,12 @@ spring:
   application:
     name: juha
 
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  jpa:
+    show-sql: true
+
 logging:
   level:
     root: DEBUG
