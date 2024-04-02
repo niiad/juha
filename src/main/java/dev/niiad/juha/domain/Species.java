@@ -14,17 +14,11 @@ public class Species {
     @Column(name = "appearance", nullable = false, length = 512)
     private String appearance;
 
-    @Column(name = "anatomy", nullable = false, length = 512)
-    private String anatomy;
-
     @Column(name = "diet", nullable = false, length = 155)
     private String diet;
 
     @Column(name = "language", nullable = false, length = 155)
     private String language;
-
-    @Column(name = "structure", nullable = false, length = 155)
-    private String structure;
 
     @Column(name = "religion", nullable = false, length = 155)
     private String religion;
@@ -56,16 +50,13 @@ public class Species {
     public Species() {}
 
     public Species(
-            String name, String appearance, String anatomy, String diet, String language, String structure,
-            String religion, String culture, String governance, String origin, int economy, int intelligence,
-            int technology, int education, int military
+            String name, String appearance, String diet, String language, String religion, String culture,
+            String governance, String origin, int economy, int intelligence, int technology, int education, int military
     ) {
         this.name = name;
         this.appearance = appearance;
-        this.anatomy = anatomy;
         this.diet = diet;
         this.language = language;
-        this.structure = structure;
         this.religion = religion;
         this.culture = culture;
         this.governance = governance;
@@ -97,14 +88,6 @@ public class Species {
         this.appearance = appearance;
     }
 
-    public String getAnatomy() {
-        return anatomy;
-    }
-
-    public void setAnatomy(String anatomy) {
-        this.anatomy = anatomy;
-    }
-
     public String getDiet() {
         return diet;
     }
@@ -119,14 +102,6 @@ public class Species {
 
     public void setLanguage(String language) {
         this.language = language;
-    }
-
-    public String getStructure() {
-        return structure;
-    }
-
-    public void setStructure(String structure) {
-        this.structure = structure;
     }
 
     public String getReligion() {
