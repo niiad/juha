@@ -41,9 +41,6 @@ public class Species {
     @Column(name = "technology", nullable = false)
     private int technology;
 
-    @Column(name = "education", nullable = false)
-    private int education;
-
     @Column(name = "military", nullable = false)
     private int military;
 
@@ -51,7 +48,7 @@ public class Species {
 
     public Species(
             String name, String appearance, String diet, String language, String religion, String culture,
-            String governance, String origin, int economy, int intelligence, int technology, int education, int military
+            String governance, String origin, int economy, int intelligence, int technology, int military
     ) {
         this.name = name;
         this.appearance = appearance;
@@ -64,7 +61,6 @@ public class Species {
         this.economy = economy;
         this.intelligence = intelligence;
         this.technology = technology;
-        this.education = education;
         this.military = military;
     }
 
@@ -158,14 +154,6 @@ public class Species {
 
     public void setTechnology(int technology) {
         this.technology = technology;
-    }
-
-    public int getEducation() {
-        return education;
-    }
-
-    public void setEducation(int education) {
-        this.education = education;
     }
 
     public int getMilitary() {
