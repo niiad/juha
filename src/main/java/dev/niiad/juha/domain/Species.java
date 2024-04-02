@@ -29,9 +29,6 @@ public class Species {
     @Column(name = "governance", nullable = false, length = 155)
     private String governance;
 
-    @Column(name = "origin", nullable = false, length = 200)
-    private String origin;
-
     @Column(name = "economy", nullable = false)
     private int economy;
 
@@ -44,11 +41,15 @@ public class Species {
     @Column(name = "military", nullable = false)
     private int military;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "planet")
+    private Planet planet;
+
     public Species() {}
 
     public Species(
             String name, String appearance, String diet, String language, String religion, String culture,
-            String governance, String origin, int economy, int intelligence, int technology, int military
+            String governance, int economy, int intelligence, int technology, int military, Planet planet
     ) {
         this.name = name;
         this.appearance = appearance;
@@ -57,11 +58,11 @@ public class Species {
         this.religion = religion;
         this.culture = culture;
         this.governance = governance;
-        this.origin = origin;
         this.economy = economy;
         this.intelligence = intelligence;
         this.technology = technology;
         this.military = military;
+        this.planet = planet;
     }
 
     public Long getId() {
@@ -124,14 +125,6 @@ public class Species {
         this.governance = governance;
     }
 
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
     public int getEconomy() {
         return economy;
     }
@@ -162,5 +155,13 @@ public class Species {
 
     public void setMilitary(int military) {
         this.military = military;
+    }
+
+    public Planet getPlanet() {
+        return planet;
+    }
+
+    public void setPlanet(Planet planet) {
+        this.planet = planet;
     }
 }
