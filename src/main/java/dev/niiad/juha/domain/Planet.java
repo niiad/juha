@@ -1,10 +1,13 @@
 package dev.niiad.juha.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Planet {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,6 +16,7 @@ public class Planet {
     private String name;
     private String condition;
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "planet")
     private List<Species> species;
 
